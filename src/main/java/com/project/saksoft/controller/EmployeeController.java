@@ -32,19 +32,23 @@ public class EmployeeController {
 	public Employee addEmployee(@RequestBody Employee employee){
 		return service.saveEmployee(employee);
 	}
+	// get Employee
 	@GetMapping("/getAllEmployee")
 	public List<Employee> getAllEmployee(){
 		return service.getEmployees();	
 	}
+	// get  Employee by id
 	@GetMapping("/getEmployeeById/{id}")
 	public Employee getEmployeeById(@PathVariable int id){
 		return service.employeeById(id);	
 	}
+	// update Employee
 	@PutMapping("/updateEmployee")
 	public String updateEmpoyees(@RequestBody Employee employee){
 		return service.updateEmployee(employee);
 		
 	}
+	// delete Employee
 	@DeleteMapping("/deleteEmployee/{id}")
 	public String deleteEmployeeById(@PathVariable int id){
 		return service.deleteEmployee(id);
